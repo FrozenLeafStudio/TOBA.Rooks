@@ -25,6 +25,11 @@ public class NewCustomerServlet extends HttpServlet {
             String state = request.getParameter("state");
             String zip = request.getParameter("zip");
             String email = request.getParameter("email");
+            String username = lname+zip;
+            String password = "welcome1";
+            
+            User user = new User(fname, lname, phone, addy, city,
+                            state, zip, email, username, password);
             
             if( fname == null || lname == null || phone == null || addy == null || 
                     city == null || state == null || zip == null || email == null ||
@@ -33,12 +38,14 @@ public class NewCustomerServlet extends HttpServlet {
                 message = "<html> <h3>Please fill out every field.</h3></html>";
                 write.println(message);
                 url = "/new_customer.html";
-                getServletContext()
-                .getRequestDispatcher(url).include(request, response);
+                request.getRequestDispatcher(url).include(request, response);
+                /*getServletContext()
+                .getRequestDispatcher(url).include(request, response);*/
 
             }else{
-                url = "/TOBA.Rooks/success.html";
-                response.sendRedirect(url);
+                url = "/success.jsp";
+                request.setAttribute("user", user);
+                request.getRequestDispatcher(url).forward(request, response);
             }
         }
     }
