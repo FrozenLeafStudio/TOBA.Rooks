@@ -7,6 +7,14 @@ and open the template in the editor.
     Created on : Oct 24, 2016, 5:57:32 PM
     Author     : stephen
 */
+#footer{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+}
 ul{
     list-style-type: none;
     margin: 0;

@@ -1,20 +1,11 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <title>New Customer Sign Up</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="/header.html"/>
+
+        <p><i>${message}</i></p>
         <div>
                 <form name="newUser" method="post" action="newCustomer">
                 
-                    First name:<br>
+                First name:<br>
                 <input type="text" name="firstname"><br>
                 Last name:<br>
                 <input type="text" name="lastname"><br>
@@ -33,5 +24,4 @@ and open the template in the editor.
                 <input type="submit" value="new customer">
             </form>
         </div>
-    </body>
-</html>
+<c:import url="/footer.jsp"/>
