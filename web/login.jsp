@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="/header.html"/>
     <div>
+        <p>${message}</p>
         <form name="loginForm" method="post" action="LoginServlet">
             Username:<br>
             <input type="text" name="username"><br>

@@ -6,15 +6,15 @@
     </context-param>
     <servlet>
         <servlet-name>NewCustomerServlet</servlet-name>
-        <servlet-class>toba.business.NewCustomerServlet</servlet-class>
+        <servlet-class>toba.user.NewCustomerServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>toba.data.LoginServlet</servlet-class>
+        <servlet-class>toba.user.LoginServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>TransactionServlet</servlet-name>
-        <servlet-class>toba.data.TransactionServlet</servlet-class>
+        <servlet-class>toba.user.TransactionServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>NewCustomerServlet</servlet-name>

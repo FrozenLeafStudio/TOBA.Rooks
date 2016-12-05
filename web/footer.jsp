@@ -4,9 +4,13 @@
     int currentYear = currentDate.get(Calendar.YEAR);
     
 %>
+</div> 
+</div> 
+<label class="pure-overlay" for="pure-toggle-left" data-overlay="left"></label> 
+</div>
+</body>
 <div id="footer">
 <p>&copy; Copyright <%= currentYear %> Stephen Rooks</p>
-</div>
 
-</body>
+</div>
 </html>

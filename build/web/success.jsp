@@ -1,17 +1,5 @@
-<%-- 
-    Document   : success
-    Created on : Nov 6, 2016, 7:23:19 PM
-    Author     : stephen
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Successful Login</title>
-    </head>
-    <body>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:import url="/header.html"/>
         <h1>Successful Login!</h1>
         <h3>Welcome ${user.fname}</h3>
         <p>Please verify your information:</p>
@@ -27,5 +15,5 @@
         <p><b>USERNAME:</b> ${user.username}</p>
         <p><b>PASSWORD:</b> ${user.password}</p>
 
-    </body>
-</html>
+    
+<c:import url="/footer.jsp"/>

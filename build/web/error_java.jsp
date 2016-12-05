@@ -1,23 +1,35 @@
-<%-- 
-    Document   : error_java
-    Created on : Oct 24, 2016, 5:51:41 PM
-    Author     : stephen
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isErrorPage="true" %>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Java Error</title>
-    </head>
-    <body>
-        <h1>Java Error</h1>
-        <p>Sorry, Java has thrown an exception.</p>
-        <p>To continue, click the Back button</p>
-        
-        <h2>Details</h2>
-        <p>Type: {pageContext.exception["class"]}</p>
-        <p>Type: {pageContext.exception.message}</p>
-    </body>
+<head>
+<title>Show Error Page</title>
+</head>
+<body>
+<h1>Java Error</h1>
+<p>Sorry, Java has thrown an exception.</p>
+<p>To continue, click the Back button</p>
+<table width="100%" border="1">
+<tr valign="top">
+<td width="40%"><b>Error:</b></td>
+<td>${pageContext.exception}</td>
+</tr>
+<tr valign="top">
+<td><b>URI:</b></td>
+<td>${pageContext.errorData.requestURI}</td>
+</tr>
+<tr valign="top">
+<td><b>Status code:</b></td>
+<td>${pageContext.errorData.statusCode}</td>
+</tr>
+<tr valign="top">
+<td><b>Stack trace:</b></td>
+<td>
+<c:forEach var="trace" 
+         items="${pageContext.exception.stackTrace}">
+<p>${trace}</p>
+</c:forEach>
+</td>
+</tr>
+</table>
+</body>
 </html>

@@ -1,11 +1,26 @@
 package toba.business;
 
-import java.beans.*;
 import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-
+@Entity
 public class User implements Serializable {
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long userid;
+
+    public Long getUserid() {
+        return userid;
+    }
+
+    public void setUserid(Long userid) {
+        this.userid = userid;
+    }
+    private String email;
+    private String username;
     private String fname;  
     private String lname;
     private String phone;
@@ -13,37 +28,32 @@ public class User implements Serializable {
     private String city;
     private String state; 
     private String zip;
-    private String email;
-    private String username;
     private String password;
     
-    public User(){
-        fname = "";
-        lname = "";
-        phone = "";
-        addy = "";
-        city = "";
-        state = "";
-        zip = "";
-        email = "";
-        username = "";
-        password = "";
+    private Account accounts;
+
+    public Account getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(Account accounts) {
+        this.accounts = accounts;
     }
     
-    public User(String fname, String lname, String phone, String addy,
-            String city, String state, String zip, String email,
-            String username, String password){
-        this.fname = fname;
-        this.lname = lname;
-        this.phone = phone;
-        this.addy = addy;
-        this.city = city;
-        this.state = state;
-        this.zip = zip;
-        this.email = email;
-        this.username = username;
-        this.password = password;
+    public User(){
+        username="";
+        fname="";  
+        lname="";
+        phone="";
+        addy="";
+        city="";
+        state=""; 
+        zip="";
+        email="";
+        password="";
+        accounts= null;
     }
+    
     public String getFname() {
         return fname;
     }

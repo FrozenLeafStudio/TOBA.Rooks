@@ -8,7 +8,32 @@ and open the template in the editor.
     <head>
         <title>Titan Online Banking Application</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="design.css"/>
+        <link href="layout/design.css" rel="stylesheet" type="text/css"/>
+        <link href="layout/pure-drawer.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="layout/app.css" type="text/css">
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <div class="pure-container" data-effect="pure-effect-slide"> 
+            <input type="checkbox" id="pure-toggle-left" class="pure-toggle" data-toggle="left"> 
+            <label class="pure-toggle-label" for="pure-toggle-left" data-toggle-label="left"> 
+                <span class="pure-toggle-icon"></span> 
+            </label> 
+            <nav class="pure-drawer" data-position="left">
+                <div class="row collapse">
+                    <div class="large-12 columns">
+                        <ul class="nav-primary">
+                            <li><a href="index.jsp">Home</a></li>
+                            <li><a href="new_customer.jsp">Sign Up</a></li>
+                            <li><a href="login.jsp">Login</a></li>
+                            <li><a href="account_activity.jsp">Account</a></li>
+                            <li><a href="transfer_funds.jsp">Money Transfer</a></li>
+                            
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav> 
+            <div class="pure-pusher-container"> 
+                <div class="pure-pusher">
