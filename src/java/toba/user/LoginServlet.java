@@ -2,6 +2,7 @@
 package toba.user;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import toba.business.User;
+import toba.data.PasswordUtil;
 import toba.data.UserDB;
 
 public class LoginServlet extends HttpServlet {
@@ -64,7 +66,13 @@ public class LoginServlet extends HttpServlet {
         User user;
         if(chkUser(username) == true){
             user = UserDB.selectUser(username);
-            
+            String salt = user.getSalt();
+            try{
+                password = PasswordUtil.hashPassword(password+salt);
+                
+            }catch(NoSuchAlgorithmException ex){
+                System.out.print(ex);
+            }
             if(user.getPassword().equals(password)){
                 return user;
             }else{

@@ -1,24 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/TOBA.Rooks">
-<!--    <Resource name="jdbc/tobadb" auth="Container" type="javax.sql.DataSource"
+    <Resource name="tobadb" auth="Container" type="javax.sql.DataSource"
               username="root" password="admin" driverClassName="com.mysql.jdbc.Driver"
-              url="jdbc:mysql://localhost:3306/TOBA.Rooks" maxActive="30" maxIdle="30"
-    />-->
+              url="jdbc:mysql://localhost:3306/tobadb" maxActive="30" maxIdle="30"
+    />
     <Realm className="org.apache.catalina.realm.DataSourceRealm" 
-         connectionName="root" connectionPassword="admin" 
-         connectionURL="jdbc:mysql://localhost:3306/TOBA.Rooks" 
-         debug="99" driverName="com.mysql.jdbc.Driver" 
-         roleNameCol="Rolename" userCredCol="Password" 
-         userNameCol="Username" userRoleTable="UserRole" 
-         userTable="UserPass"/>
-<!--    <Realm className="org.apache.catalina.realm.DataSourceRealm" 
             debug="99"
-            dataSourceName="jdbc/tobadb" 
-            connectionURL="jdbc:mysql://localhost:/TOBA.Rooks"
+            dataSourceName="tobadb" 
+            connectionURL="jdbc:mysql://localhost:/tobadb"
             localDataSource="true" 
             userTable="UserPass"
             userNameCol="Username" 
             userCredCol="Password" 
             userRoleTable="UserRole"
-            roleNameCol="Rolename"/>-->
+            roleNameCol="Rolename"/>
 </Context>

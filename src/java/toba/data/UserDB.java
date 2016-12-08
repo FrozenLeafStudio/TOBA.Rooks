@@ -38,12 +38,12 @@ public class UserDB {
             ent.close();
         }
     }
-    public static User selectUser(String email){
+    public static User selectUser(String username){
         EntityManager ent = DBtool.getEmFactory().createEntityManager();
         String qString = "SELECT u FROM User u " +
-                "WHERE u.email = :email";
+                "WHERE u.username = :username";
         TypedQuery<User> q = ent.createQuery(qString, User.class);
-        q.setParameter("email", email);
+        q.setParameter("username", username);
         try {
             List qUser = q.getResultList();
             User foundUser = null;

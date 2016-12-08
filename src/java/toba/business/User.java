@@ -29,6 +29,15 @@ public class User implements Serializable {
     private String state; 
     private String zip;
     private String password;
+    private String salt;
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
     
     private Account accounts;
 
